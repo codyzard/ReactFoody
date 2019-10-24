@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
-  resources :products
+  devise_for :users
+  resources :products;
   resources :categories;
+  resources :users;
+  resources :items;
+  resources :carts;
 end

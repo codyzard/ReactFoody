@@ -1,3 +1,20 @@
+#user
+User.create!(name:  "admin",
+  email: "admin@gmail.com",
+  password:              "123456",
+  password_confirmation: "123456",
+  role: 1)
+10.times do |n|
+name  = Faker::Name.name
+email = "user#{n+1}@gmail.com"
+password = "123456"
+User.create!(name:  name,
+    email: email,
+    password:              password,
+    password_confirmation: password,
+    role: 2)
+end
+
 categories = ["Chien xao","Lau","Nuong","Sushi","Hai san"]
 i = 0;
 5.times do
