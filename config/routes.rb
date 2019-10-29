@@ -4,5 +4,12 @@ Rails.application.routes.draw do
   resources :categories;
   resources :users;
   resources :items;
-  resources :carts;
+  resources :reviews
+  resources :carts do
+    member do
+      post "confirm"
+      post "accept"
+      post "decline"
+    end
+  end
 end

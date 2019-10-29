@@ -1,14 +1,15 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :update, :destroy]
-
+  before_action :find_reviews, only: [:show]
   def index
     @products = Product.all
-
     render json: @products
   end
 
   def show
-    render json: @product
+    respond_to do |format|
+      format.json  { render :json =>{:product => @product, :reviews => @reviews}}
+    end
   end
 
   def create
@@ -38,7 +39,12 @@ class ProductsController < ApplicationController
       @product = Product.find(params[:id])
     end
 
+    def find_reviews
+      @reviews = Review.where(product_id: params[:id])
+    end
+
     def product_params
       params.permit(:name,:image,:price,:classsify,:quantity,:description,:category_id)
     end
+    
 end

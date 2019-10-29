@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
     
     before_action :find_user, only: [:create,:destroy]
     before_action :find_product, only: [:create,:destroy]
+    before_action :find_item, only: [:destroy]
     def create
         return if @user.nil?
         @item = Item.new(item_params)
@@ -28,6 +29,7 @@ class ItemsController < ApplicationController
     end
 
     def destroy
+        render json: @items
 		@item.destroy
 	end
 
@@ -43,7 +45,7 @@ class ItemsController < ApplicationController
     end
     
     def find_item
-        @item = Item.find(params[:item])
+        @item = Item.find(params[:id])
     end
 
     def checkDupfood items
