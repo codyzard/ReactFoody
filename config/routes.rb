@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :users;
   resources :items;
   resources :reviews
+  post '/items/onsession', to: "items#itemOnSession"
   resources :carts do
     member do
       post "confirm"
@@ -12,4 +13,10 @@ Rails.application.routes.draw do
       post "decline"
     end
   end
+ 
+  # namespace :api do
+  #   namespace :v1 do
+  #     resources :products  
+  #   end
+  # end
 end

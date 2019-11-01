@@ -13,15 +13,13 @@ require "action_cable/engine"
 # require "sprockets/railtie"
 require "rails/test_unit/railtie"
 
-# Require the gems listed in Gemfile, including any gems
-# you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
 module Foody
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
-
+    
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
@@ -31,6 +29,18 @@ module Foody
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
+
+   
+    config.middleware.insert_before 0, Rack::Cors do
+      allow do
+        origins '*'
+        resource(
+          '*', headers: :any, 
+          methods: [:get, :post, :options]
+        ) 
+      end
+    end
+
     # config.filter_parameters += [:password]
   end
 end

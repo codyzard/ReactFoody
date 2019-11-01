@@ -1,31 +1,37 @@
 class ItemsController < ApplicationController
     
-    before_action :find_user, only: [:create,:destroy]
-    before_action :find_product, only: [:create,:destroy]
+    # before_action :find_user, only: [:create,:destroy]
+    before_action :find_product, only: [:create,:destroy, :itemOnSession]
     before_action :find_item, only: [:destroy]
+    
+    def itemOnSession
+        session[:items] << @product;
+        render json: session[:items];
+    end
+
     def create
-        return if @user.nil?
-        @item = Item.new(item_params)
-        @cartCheckout = @user.carts.last
-        if(@cartCheckout && @cartCheckout.status == 3)
-            @item.cart_id = @cartCheckout.id            
-            product_ids = checkDupfood(@cartCheckout.items) # check dupProduct
-            check = product_ids.include?(@product.id)
-            if(@product.quantity > 0 && check == false)
-                @item.product_id = @product.id 
-            else
-                @item.product_id = nil  
-            end
-        else
-            @item.cart_id = (@user.carts.create).id
-            @item.product_id = params[:product_id] if (@product.quantity > 0)
-        end
+        # return if @user.nil?
+        # @item = Item.new(item_params)
+        # @cartCheckout = @user.carts.last
+        # if(@cartCheckout && @cartCheckout.status == 3)
+        #     @item.cart_id = @cartCheckout.id            
+        #     product_ids = checkDupfood(@cartCheckout.items) # check dupProduct
+        #     check = product_ids.include?(@product.id)
+        #     if(@product.quantity > 0 && check == false)
+        #         @item.product_id = @product.id 
+        #     else
+        #         @item.product_id = nil  
+        #     end
+        # else
+        #     @item.cart_id = (@user.carts.create).id
+        #     @item.product_id = params[:product_id] if (@product.quantity > 0)
+        # end
        
-        if @item.product_id && @item.save
-            render json: @item, status: :created, location: @item
-        else
-            render json: @item.errors, status: :unprocessable_entity
-        end
+        # if @item.product_id && @item.save
+        #     render json: @item, status: :created, location: @item
+        # else
+        #     render json: @item.errors, status: :unprocessable_entity
+        # end
     end
 
     def destroy
