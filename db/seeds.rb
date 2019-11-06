@@ -28,7 +28,8 @@ end
     description = "Coca cola la orion"
     quantity = 100
     price = 10000
-    image = "no_image.jpg"
+    # image = "no_image.jpg"
+    image = "dong2.gif"
     category_id = Category.all[rand(0..4)].id
     classify = rand(0..1)
     Product.create!(name: name, description: description, quantity: quantity, price: price, 
