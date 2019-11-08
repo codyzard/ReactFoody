@@ -1,11 +1,15 @@
 Rails.application.routes.draw do
   devise_for :users
+  # devise_for :users, controllers: { sessions: 'users/sessions' }
   resources :products;
   resources :categories;
   resources :users;
   resources :items;
   resources :reviews
   post '/items/onsession', to: "items#itemOnSession"
+  # resources :session, only: [:create,:destroy]
+    # post '/sign_in', to: 'sessions#create'
+    # delete '/sign_out', to: 'session#destroy'
   resources :carts do
     member do
       post "confirm"

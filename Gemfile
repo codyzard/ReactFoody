@@ -14,6 +14,7 @@ gem 'devise_token_auth'
 gem 'react-rails'
 # gem 'rack-cors', :require => 'rack/cors'
 gem 'rack-cors'
+gem 'simple_token_authentication'
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
