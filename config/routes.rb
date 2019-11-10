@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
-  devise_for :users
-  # devise_for :users, controllers: { sessions: 'users/sessions' }
+  # devise_for :users
+  # resources :sessions, only: [:create, :destroy]
+  devise_for :users, controllers: { 
+    :sessions => 'users/sessions',
+    :registrations => 'users/registrations' 
+  }
+  put '/users/update', to: 'users#update'
   resources :products;
   resources :categories;
-  resources :users;
+  # resources :users;
   resources :items;
   resources :reviews
   post '/items/onsession', to: "items#itemOnSession"

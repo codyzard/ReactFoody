@@ -1,4 +1,4 @@
-class Users::SessionsController < ApplicationController
+class SessionsController < ApplicationController
    def create
     user = User.where(email: params[:email]).first
     
@@ -12,6 +12,5 @@ class Users::SessionsController < ApplicationController
    def destroy
        
    end
-
 end
   
