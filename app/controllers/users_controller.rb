@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
     
     def update
-        byebug
         @user = User.find_by(email: params[:email])
         if @user
             @user.update_attributes(user_params)
@@ -10,7 +9,10 @@ class UsersController < ApplicationController
             render status: 401
         end    
     end
-
+    def show
+        @user = User.find_by(authentication_token: params[:authentication_token])
+        render json: @user, except: [:created_at,:updated_at,:authentication_token]
+    end
     private
     def user_params
         params.permit(:name,:password,:password_confirmation)

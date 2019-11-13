@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     :registrations => 'users/registrations' 
   }
   put '/users/update', to: 'users#update'
+  get '/users/:authentication_token', to: 'users#show'
+  # resources :users
   resources :products;
   resources :categories;
   # resources :users;
