@@ -21,21 +21,27 @@ User.create!(name:  name,
     role: 2)
 end
 
-categories = ["Chien xao","Lau","Nuong","Sushi","Hai san"]
-i = 0;
-5.times do
-  name = categories[i];
-  description = Faker::Food.description
-  i = i + 1;
-  Category.create!(name: name, description: description);
+categories = ["Beef","Pork","Chicken","Hot pot","Soup","Sushi","Sea food","Beer","Milk tea","Smoothies","Tea","Cocktail","Coffee"]
+
+for i in 0..6
+  name= categories[i]
+  classify= 1;
+  Category.create!(name:name, classify: classify)
 end
+
+for i in 7..12
+  name= categories[i]
+  classify= 0;
+  Category.create!(name:name, classify: classify)
+end
+
 10.times do
-    name = Faker::Name.name
-    description = "Coca cola la orion"
+    name = Faker::Food.dish
+    description = Faker::Food.description
     quantity = 100
     price = 10000
-    # image = "no_image.jpg"
-    image = "dong2.gif"
+    image = "https://nhanlucquocte.net/wp-content/uploads/2019/04/mi-ramen.jpg"
+
     category_id = Category.all[rand(0..4)].id
     classify = rand(0..1)
     Product.create!(name: name, description: description, quantity: quantity, price: price, 

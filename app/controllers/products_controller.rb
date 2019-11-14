@@ -9,7 +9,7 @@
 
     def show
       # respond_to do |format|
-      #   format.json  { render :json =>{:product => @product, :reviews => @product.reviews}}
+      #   format.json  { render :json =>{:product => @product, :reviews => @reviews}}
       # end
       render json: @product
     end
