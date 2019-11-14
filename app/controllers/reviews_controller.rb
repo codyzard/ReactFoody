@@ -8,7 +8,7 @@ class ReviewsController < ApplicationController
   end
 
   def show
-    
+    render json: @review
   end
 
   def create

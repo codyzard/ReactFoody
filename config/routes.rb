@@ -13,7 +13,11 @@ Rails.application.routes.draw do
       post "decline"
     end
   end
- 
+ resources :products do
+    member do
+    get "reviews"
+    end
+ end
   # namespace :api do
   #   namespace :v1 do
   #     resources :products  

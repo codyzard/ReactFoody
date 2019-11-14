@@ -42,4 +42,10 @@ end
     image: image, category_id: category_id, classify:classify)
 end
 
-  
+10.times do
+  comment = Faker::Lorem.paragraph(sentence_count:3)
+  rate = rand(1..5)
+  user_id = User.all[rand(0..9)].id
+  product_id = Product.all[rand(0..9)].id
+  Review.create!(comment: comment, rate: rate, user_id: user_id, product_id: product_id)
+end
