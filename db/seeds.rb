@@ -1,6 +1,8 @@
 #user
 User.create!(name:  "admin",
+  phone: "0774455559",
   email: "admin@gmail.com",
+  avatar: "avatar.jpg",
   password:              "123456",
   password_confirmation: "123456",
   role: 1)
@@ -8,7 +10,11 @@ User.create!(name:  "admin",
 name  = Faker::Name.name
 email = "user#{n+1}@gmail.com"
 password = "123456"
+phone = "0774455559"
+avatar= "avatar.jpg"
 User.create!(name:  name,
+    phone: phone,
+    avatar: avatar,
     email: email,
     password:              password,
     password_confirmation: password,
