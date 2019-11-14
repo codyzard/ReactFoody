@@ -33,7 +33,7 @@ end
     name = Faker::Food.dish
     description = Faker::Food.description
     quantity = 100
-    price = 10000
+    price = rand(20000...200000)
     image = "https://nhanlucquocte.net/wp-content/uploads/2019/04/mi-ramen.jpg"
 
     category_id = Category.all[rand(0..4)].id
@@ -43,7 +43,7 @@ end
 end
 
 10.times do
-  comment = Faker::Lorem.paragraph(sentence_count:3)
+  comment = Faker::Restaurant.review
   rate = rand(1..5)
   user_id = User.all[rand(0..9)].id
   product_id = Product.all[rand(0..9)].id
