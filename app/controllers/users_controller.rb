@@ -4,7 +4,7 @@ class UsersController < ApplicationController
         @user = User.find_by(email: params[:email])
         if @user
             @user.update_attributes(user_params)
-            render json: @user, only: [:id,:name,:email,:authentication_token], status: 201
+            render json: @user, only: [:id,:name,:email,:authentication_token], status: 202
         else
             render status: 401
         end    
@@ -15,6 +15,6 @@ class UsersController < ApplicationController
     end
     private
     def user_params
-        params.permit(:name,:password,:password_confirmation)
+        params.permit(:name,:phone,:avatar,:password)
     end
 end
