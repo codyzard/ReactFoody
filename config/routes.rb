@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   }
   put '/users/update', to: 'users#update'
   get '/users/:authentication_token', to: 'users#show'
+  get '/users/mini/:id', to: 'users#mini'
   # resources :users
   resources :products;
   resources :categories;
@@ -27,6 +28,7 @@ Rails.application.routes.draw do
  resources :products do
     member do
     get "reviews"
+    get "commentedUsers"
     end
  end
   # namespace :api do
