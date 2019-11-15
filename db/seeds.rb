@@ -41,18 +41,23 @@ end
     quantity = 100
     price = rand(1..9)*15000
     image = "https://nhanlucquocte.net/wp-content/uploads/2019/04/mi-ramen.jpg"
-
+    rate = 0
     category_id = Category.all[rand(0..12)].id
     classify = rand(0..1)
     Product.create!(name: name, description: description, quantity: quantity, price: price, 
-    image: image, category_id: category_id, classify:classify)
+    image: image, category_id: category_id, classify:classify, rate: rate)
 end
 
 100.times do
-  comment = Faker::TvShows::Community.quotes
-  rate = rand(1..5)
+  comment = Faker::Restaurant.description 
+  rate = rand(0..5)
   user_id = User.all[rand(0..49)].id
-  product_id = Product.all[rand(0..49)].id
+  product_id =  Product.all[rand(0..49)].id
+  Review.create!(comment: comment, rate: rate, user_id: user_id, product_id: product_id)
+end
 
-    Review.create(comment: comment, rate: rate, user_id: user_id, product_id: product_id)
+products = Product.all
+products.each do |product|
+  avr_rate = product.average_rate
+  product.update_attribute(:rate, avr_rate)
 end

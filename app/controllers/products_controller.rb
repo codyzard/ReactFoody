@@ -27,8 +27,8 @@
         @users << i.user
       }
       render json: @users
-
     end
+    
     def create
       @product = Product.new(product_params)
 
