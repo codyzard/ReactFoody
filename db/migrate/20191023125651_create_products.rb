@@ -4,6 +4,7 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.string :name
       t.string :image
       t.float :price
+      t.integer :rate
       t.boolean :classify #food or drink
       t.integer :quantity
       t.string :description

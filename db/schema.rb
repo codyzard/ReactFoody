@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_25_104500) do
+ActiveRecord::Schema.define(version: 2019_11_10_025012) do
 
   create_table "carts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "status", default: 3
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 2019_10_25_104500) do
     t.string "name"
     t.string "image"
     t.float "price"
+    t.integer "rate"
     t.boolean "classify"
     t.integer "quantity"
     t.string "description"
@@ -54,7 +55,7 @@ ActiveRecord::Schema.define(version: 2019_10_25_104500) do
 
   create_table "reviews", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "comment"
-    t.float "rate"
+    t.integer "rate"
     t.bigint "user_id"
     t.bigint "product_id"
     t.datetime "created_at", null: false
@@ -65,6 +66,8 @@ ActiveRecord::Schema.define(version: 2019_10_25_104500) do
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
+    t.string "phone", default: ""
+    t.string "avatar", default: ""
     t.integer "role", default: 2
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -73,6 +76,8 @@ ActiveRecord::Schema.define(version: 2019_10_25_104500) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "authentication_token", limit: 30
+    t.index ["authentication_token"], name: "index_users_on_authentication_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
