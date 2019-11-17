@@ -49,7 +49,7 @@ end
 end
 
 100.times do
-  comment = Faker::Restaurant.description 
+  comment = Faker::TvShows::Friends.quote 
   rate = rand(0..5)
   user_id = User.all[rand(0..49)].id
   product_id =  Product.all[rand(0..49)].id
