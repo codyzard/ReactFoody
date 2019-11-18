@@ -37,7 +37,7 @@ end
 
 10.times do
     name = Faker::Food.dish
-    description = Faker::Food.description
+    description = Faker::Food.description[1..30]
     quantity = 100
     price = 10000
     image = "https://nhanlucquocte.net/wp-content/uploads/2019/04/mi-ramen.jpg"
