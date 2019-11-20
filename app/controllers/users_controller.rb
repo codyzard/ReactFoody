@@ -13,6 +13,10 @@ class UsersController < ApplicationController
         @user = User.find_by(authentication_token: params[:authentication_token])
         render json: @user, except: [:created_at,:updated_at,:authentication_token]
     end
+    def mini
+        @user = User.find_by(id: params[:id])
+        render json: @user, except: [:created_at,:updated_at,:authentication_token]
+    end
     private
     def user_params
         params.permit(:name,:phone,:avatar,:password)

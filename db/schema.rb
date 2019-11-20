@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 2019_11_10_025012) do
     t.string "name"
     t.string "image"
     t.float "price"
+    t.integer "rate"
     t.boolean "classify"
     t.integer "quantity"
     t.string "description"
@@ -54,7 +55,7 @@ ActiveRecord::Schema.define(version: 2019_11_10_025012) do
 
   create_table "reviews", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "comment"
-    t.float "rate"
+    t.integer "rate"
     t.bigint "user_id"
     t.bigint "product_id"
     t.datetime "created_at", null: false
