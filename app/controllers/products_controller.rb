@@ -14,6 +14,21 @@
       render json: @product
     end
 
+    def reviews
+      @product= Product.find(params[:id])
+      @reviews = @product.reviews
+      render json: @reviews
+    end
+    def commentedUsers
+      @product= Product.find(params[:id])
+      @reviews = @product.reviews
+      @users = []
+      @reviews.each{ |i|
+        @users << i.user
+      }
+      render json: @users
+    end
+    
     def create
       @product = Product.new(product_params)
 
