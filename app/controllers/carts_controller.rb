@@ -32,30 +32,34 @@ class CartsController < ApplicationController
   end
   def update
     user = find_user(params[:id])
-    cart = Cart.find_by(id:params[:cart_id],user_id:user.id)
-    item = Item.find_by(cart_id: cart.id,product_id:params[:product_id])
-    item.update_attributes(quantity:params[:quantity])
-    render json: Cart.find_by(id:params[:cart_id],user_id:user.id).items
+    cart = Cart.find_by(status:3,user_id:user.id)
+    item = cart.items.find_by(id:params[:Item_id])
+    if item != nil
+      item.update_attributes(quantity:params[:quantity])
+    end
+    render json: Cart.find_by(status:3,user_id:user.id).items
   end
   def delete
-    user = find_user(params[:id])
-    cart = Cart.find_by(id:params[:cart_id],user_id:user.id)
-    item = Item.find_by(cart_id: cart.id,product_id:params[:product_id])
-    if item != []
+    user =find_user (params[:id])
+    @cart =Cart.find_by(user_id: user.id,status:3)
+    @items = @cart.items
+    item = @items.find_by(id:params[:Item_id])
+    if item != nil
       item.destroy
     end
+    para = []
+    @items.map{|i| para.push({:id=>i.id,:quantity=>i.quantity,:name=>Product.find_by(id: i.product_id).name,:image=>Product.find_by(id: i.product_id).image,:price=>Product.find_by(id: i.product_id).price})}
+    render json: para
   end
   def addProduct
     item = Item.find_by(cart_id:@cart.id,product_id:params[:product_id])
-    if item == {}
-        i = Item.create(cart_id:@cart.ids.first,product_id:params[:product_id],quantity:params[:quantity])
+    if item == nil
+        i = Item.create(cart_id:@cart.id,product_id:params[:product_id],quantity:params[:quantity])
         @cart.update_attributes(status:3)
-        render json:Item.where(cart_id:@cart.id)
     else
         q = item.quantity
         item.update_attributes(quantity:q +params[:quantity])
         @cart.update_attributes(status:3)
-        render json:Item.where(cart_id:@cart.id)
     end
   end
   def getCart
