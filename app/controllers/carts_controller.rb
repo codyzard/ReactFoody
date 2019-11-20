@@ -1,98 +1,73 @@
 class CartsController < ApplicationController
-  before_action :find_user, only:[:show, :index]
-  before_action :set_cart, only: [:show, :confirm,:accept,:decline]
+  before_action :set_cart, only: [:getCart,:addProduct]
   before_action :history_cart, only: [:index]
   before_action :find_cart, only:[:destroy]
-  def index
-    if (@user.role == 1)
-      @carts = Cart.all
-    else
-      @carts = @historyCart
-    end
-    render json: @carts    
+  def index 
   end
-
   def show
-    render json: @cart.items
+    @carts = Cart.all
+    params = []
+    @carts.map{|i| params.push(:user_id=> i.user_id,:cart =>Item.where(cart_id: i.id),:status => i.status)}
+    render json: params
   end
-
+  def confirm
+    cart = Cart.find_by(id:params[:cart_id])
+    if cart.status == 3
+      cart.items.map{|i| decline(i)}
+      cart.update_attributes(status: 0)
+    end
+  end
   def create
-    @cart = Cart.new(cart_params)
-
-    if @cart.save
-      render json: @cart, status: :created, location: @cart
-    else
-      render json: @cart.errors, status: :unprocessable_entity
-    end
   end
-
   def update
-    if @cart.update(cart_params)
-      render json: @cart
-    else
-      render json: @cart.errors, status: :unprocessable_entity
-    end
+    # if @cart.update(cart_params)
+    #   render json: @cart
+    # else
+    #   render json: @cart.errors, status: :unprocessable_entity
+    # end
   end
-
   def destroy
     render json: @cart_admin
     @cart_admin.destroy
   end
-
-  def confirm
-    @items = @cart.items
-    update_quantity(@items)
+  def update
+    user = find_user(params[:id])
+    cart = Cart.find_by(id:params[:cart_id],user_id:user.id)
+    item = Item.find_by(cart_id: cart.id,product_id:params[:product_id])
+    item.update_attributes(quantity:params[:quantity])
+    render json: Cart.find_by(id:params[:cart_id],user_id:user.id).items
   end
-  
-  def update_quantity (items)
-    return nil if items == []
-    checkOut = 0
-    money = 0.0
-    productArr = [] 
-    items.each_with_index do |i,index|
-      productArr[index] = Product.find_by(id: i.product_id)
-      if(productArr[index].quantity >= i.quantity )
-        productArr[index].quantity = productArr[index].quantity - i.quantity
-      else
-        checkOut = 3;
-        break;
-      end
+  def delete
+    user = find_user(params[:id])
+    cart = Cart.find_by(id:params[:cart_id],user_id:user.id)
+    item = Item.find_by(cart_id: cart.id,product_id:params[:product_id])
+    if item != []
+      item.destroy
     end
-    if(checkOut == 0)
-      productArr.each_with_index do |p,index|
-        product = Product.find(p.id)
-        product.update_attributes(quantity: p.quantity)
-        money += p.price*p.quantity
-      end
-      cart = Cart.find(items[0].cart_id)
-      cart.update_attributes(status: 0, checkout: money, buyTime: Time.zone.now.to_date)
-      render json: cart
+  end
+  def addProduct
+    item = Item.find_by(cart_id:@cart.id,product_id:params[:product_id])
+    if item == {}
+        i = Item.create(cart_id:@cart.ids.first,product_id:params[:product_id],quantity:params[:quantity])
+        @cart.update_attributes(status:3)
+        render json:Item.where(cart_id:@cart.id)
     else
-      return nil
+        q = item.quantity
+        item.update_attributes(quantity:q +params[:quantity])
+        @cart.update_attributes(status:3)
+        render json:Item.where(cart_id:@cart.id)
     end
   end
-
-  def accept
-    @cart.update_attributes(status: 1)
-    render json:@cart
+  def getCart
+    @items = @cart.items
+    params = []
+    @items.map{|i| params.push({:id=>i.id,:quantity=>i.quantity,:name=>Product.find_by(id: i.product_id).name,:image=>Product.find_by(id: i.product_id).image,:price=>Product.find_by(id: i.product_id).price})}
+    render json: params
   end
-
-  def decline
-    @cart.update_attributes(status: 2, checkout: -@cart.checkout)
-    undo_quantity (@cart.items)
-    render json:@cart
-  end
-
-  def undo_quantity(items) #bo hang vao kho
-    items.each_with_index do |i,index|
-      product = Product.find(i.product_id)
-      product.update_attributes(quantity: product.quantity + i.quantity)
-    end
-  end
-  
   private
     def set_cart
-      @cart = Cart.find(params[:user_id])
+      user = find_user(params[:id])
+      @cart = Cart.find_by(user_id: user.id)
       if (@cart.status == 0) 
         return nil
       else 
@@ -111,9 +86,13 @@ class CartsController < ApplicationController
     def history_cart
       @historyCart = Cart.where(user_id: params[:user_id])
     end
-    
-    def find_user
-      @user = User.find(params[:user_id])
+    def decline (item)
+      p = Product.find_by(id:item.product_id)
+      p.update_attributes(quantity: p.quantity - item.quantity)
+    end
+
+    def find_user (authentication_token)
+      @user = User.find_by(authentication_token: authentication_token)
     end
 
 end

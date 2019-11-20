@@ -11,18 +11,30 @@ Rails.application.routes.draw do
   resources :products;
   resources :categories;
   # resources :users;
-  resources :items;
+  # resources :items;
+  resources :items
+  # do 
+  #   member do
+      
+  #   end
+  # end
   resources :reviews
   post '/items/onsession', to: "items#itemOnSession"
   # resources :session, only: [:create,:destroy]
     # post '/sign_in', to: 'sessions#create'
     # delete '/sign_out', to: 'session#destroy'
+  get '/carts' , to: "carts#show"
+  post '/carts/confirm',to: "carts#confirm"
   resources :carts do
     member do
-      post "confirm"
-      post "accept"
-      post "decline"
+      post "update"
+      post "delete"
+      post "addProduct"
+      get "getCart"
+      # post "accept"
+      # post "decline"
     end
+
   end
  resources :products do
     member do
