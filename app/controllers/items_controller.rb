@@ -1,15 +1,15 @@
 class ItemsController < ApplicationController
     
-    # before_action :find_user, only: [:create,:destroy]
+    before_action :find_cart, only: [:addProduct]
     before_action :find_product, only: [:create,:destroy, :itemOnSession]
     before_action :find_item, only: [:destroy]
-    
     def itemOnSession
         session[:items] << @product;
         render json: session[:items];
     end
 
     def create
+        byebug
         # return if @user.nil?
         # @item = Item.new(item_params)
         # @cartCheckout = @user.carts.last
@@ -33,7 +33,6 @@ class ItemsController < ApplicationController
         #     render json: @item.errors, status: :unprocessable_entity
         # end
     end
-
     def destroy
         render json: @items
 		@item.destroy
@@ -41,9 +40,9 @@ class ItemsController < ApplicationController
 
     private 
 
-    def find_user
-        # @user = current_user
-        @user = User.find(params[:user_id])
+    def find_cart
+        @user = User.where(authentication_token:params[:id])
+        @cart = Cart.where(user_id: @user.select(:id))
     end
     
     def find_product

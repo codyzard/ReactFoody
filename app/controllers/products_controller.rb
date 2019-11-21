@@ -3,7 +3,7 @@
     before_action :set_product, only: [:show, :update, :destroy]
     before_action :find_reviews, only: [:show]
     def index
-      @products = Product.all
+      @products = Product.all.order("created_at DESC")
       render json: @products
     end
 
@@ -61,7 +61,7 @@
       end
 
       def product_params
-        params.permit(:name,:image,:price,:classsify,:quantity,:description,:category_id)
+        params.permit(:name,:image,:price,:classify,:quantity,:description,:category_id)
       end
       
   end
