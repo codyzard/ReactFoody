@@ -13,7 +13,7 @@ class Users::SessionsController < Devise::SessionsController
   def create  
     user = User.where(email: params[:email]).first
     if user && user.valid_password?(params[:password])
-        render json: user, only: [:id,:name,:email, :authentication_token], status: 201
+        render json: user, only: [:id,:name,:email, :authentication_token, :role], status: 201
     else
         head(:unauthorized)
     end
