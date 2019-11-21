@@ -42,11 +42,18 @@ ActiveRecord::Schema.define(version: 2019_11_10_025012) do
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.string "image"
+<<<<<<< HEAD
+    t.float "price", default: 0.0
+    t.boolean "classify", default: true
+    t.integer "quantity", default: 0
+    t.string "description", default: "0"
+=======
     t.float "price"
     t.integer "rate"
     t.boolean "classify"
     t.integer "quantity"
     t.string "description"
+>>>>>>> Huyen-ruby
     t.bigint "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
