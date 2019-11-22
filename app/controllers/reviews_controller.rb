@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :set_review, only: [:show, :update]
-  before_action :find_user, only: [:create, :destroy]
+  before_action :find_user, only: [:create]
   def index
     @reviews = Review.all
 
@@ -15,13 +15,20 @@ class ReviewsController < ApplicationController
     @review = @user.reviews.create(review_params)
     if @review.save
       render json: @review, status: :created, location: @review
+      @product = Product.find(@review.product_id)
+      avr_rate = @product.average_rate
+      @product.update_attribute(:rate, avr_rate)
     else
       render json: @review.errors, status: :unprocessable_entity
     end
+
   end
 
   def update
     if @review.update(review_params)
+      @product = Product.find(@review.product_id)
+      avr_rate = @product.average_rate
+      @product.update_attribute(:rate, avr_rate)
       render json: @review
     else
       render json: @review.errors, status: :unprocessable_entity
@@ -29,8 +36,11 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
-    @review = @user.reviews.find_by(id: params[:id])
+    @review = Review.find(params[:id])
+    @product = Product.find(@review.product_id)
     @review.destroy 
+    avr_rate = @product.average_rate
+    @product.update_attribute(:rate, avr_rate)
   end
 
   private
@@ -41,7 +51,6 @@ class ReviewsController < ApplicationController
     def find_user
       @user = User.find(params[:user_id])
     end
-
     def review_params
       params.permit(:user_id,:product_id,:rate,:comment)
     end
