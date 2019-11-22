@@ -2,7 +2,7 @@ class CategoriesController < ApplicationController
   before_action :set_category, only: [:show, :update, :destroy]
 
   def index
-    @categories = Category.all
+    @categories = Category.all.order("created_at DESC")
 
     render json: @categories
   end
@@ -39,6 +39,6 @@ class CategoriesController < ApplicationController
     end
 
     def category_params
-      params.permit(:name,:description)
+      params.permit(:name,:description,:classify)
     end
 end
