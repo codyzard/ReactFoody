@@ -46,6 +46,7 @@ class CartsController < ApplicationController
     item = @items.find_by(id:params[:Item_id])
     if item != nil
       item.destroy
+      
     end
     para = []
     @items.map{|i| para.push({:id=>i.id,:quantity=>i.quantity,:name=>Product.find_by(id: i.product_id).name,:image=>Product.find_by(id: i.product_id).image,:price=>Product.find_by(id: i.product_id).price})}
@@ -69,6 +70,7 @@ class CartsController < ApplicationController
     render json: params
   end
   def historyCartDang
+    # byebug
     @user = User.find_by(authentication_token: params[:id])
     @cartD = Cart.where(user_id: @user.id)
     render json: @cartD

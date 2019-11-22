@@ -62,8 +62,9 @@ products.each do |product|
   product.update_attribute(:rate, avr_rate)
 end
 
-10.times do
-  status= rand(4)
+Cart.create!(status: 3,user_id: 1)
+9.times do
+  status= rand(2)
   user_id= 1
   Cart.create!(status: status, user_id: user_id)
 end
