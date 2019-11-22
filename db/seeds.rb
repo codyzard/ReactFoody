@@ -47,17 +47,6 @@ end
     Product.create!(name: name, description: description, quantity: quantity, price: price, 
     image: image, category_id: category_id, classify:classify, rate: rate)
 end
-5.times do 
-  status = rand(0..3)
-  user_id = User.all[rand(0..49)].id
-  Cart.create!(status: status,user_id: user_id)
-end
-20.times do 
-  quantity = rand(1..10)
-  cart_id = Cart.all[rand(0..4)].id
-  product_id = Product.all[rand(0..49)].id
-  Item.create!(quantity: quantity,cart_id: cart_id,product_id: product_id)
-end
 100.times do
   comment = Faker::TvShows::Friends.quote 
   rate = rand(0..5)

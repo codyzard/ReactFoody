@@ -28,6 +28,7 @@ Rails.application.routes.draw do
   post '/carts/confirm',to: "carts#confirm"
   post '/carts/decline',to: "carts#decline"
   resources :carts do
+    post "sendcart"
     member do
       post "update"
       post "delete"
