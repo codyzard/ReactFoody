@@ -26,6 +26,7 @@ class UsersController < ApplicationController
     end
 
     def show
+        # byebug
         @user = User.find_by(authentication_token: params[:authentication_token])
         render json: @user, except: [:created_at,:updated_at]
     end
