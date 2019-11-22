@@ -5,17 +5,31 @@ class CartsController < ApplicationController
   def index 
   end
   def show
-    @carts = Cart.all
+    @carts = Cart.where.not(status: 3)
     params = []
-    @carts.map{|i| params.push(:user_id=> i.user_id,:cart =>Item.where(cart_id: i.id),:status => i.status)}
+    @carts.map{|i| params.push(:id => i.id,:username => User.find_by(id:i.user_id).name,:status=>i.status,:item => i.items)}
     render json: params
+  end
+  def decline
+    cart = Cart.find_by(id:params[:cart_id])
+    if cart.status == 0
+      cart.update_attributes(status: 2)
+    end
+    @carts = Cart.where.not(status: 3)
+    para = []
+    @carts.map{|i| para.push(:id => i.id,:username => User.find_by(id:i.user_id).name,:status=>i.status,:item => i.items)}
+    render json: para
   end
   def confirm
     cart = Cart.find_by(id:params[:cart_id])
-    if cart.status == 3
-      cart.items.map{|i| decline(i)}
-      cart.update_attributes(status: 0)
+    if cart.status == 0
+      cart.items.map{|i| minus(i)}
+      cart.update_attributes(status: 1)
     end
+    @carts = Cart.where.not(status: 3)
+    para = []
+    @carts.map{|i| para.push(:id => i.id,:username => User.find_by(id:i.user_id).name,:status=>i.status,:item => i.items)}
+    render json: para
   end
   def create
   end
@@ -90,7 +104,7 @@ class CartsController < ApplicationController
     def history_cart
       @historyCart = Cart.where(user_id: params[:user_id])
     end
-    def decline (item)
+    def minus (item)
       p = Product.find_by(id:item.product_id)
       p.update_attributes(quantity: p.quantity - item.quantity)
     end
