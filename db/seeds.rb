@@ -61,3 +61,9 @@ products.each do |product|
   avr_rate = product.average_rate
   product.update_attribute(:rate, avr_rate)
 end
+
+10.times do
+  status= rand(4)
+  user_id= 1
+  Cart.create!(status: status, user_id: user_id)
+end

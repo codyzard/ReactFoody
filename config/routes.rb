@@ -26,12 +26,15 @@ Rails.application.routes.draw do
     # delete '/sign_out', to: 'session#destroy'
   get '/carts' , to: "carts#show"
   post '/carts/confirm',to: "carts#confirm"
+  # get "historyCartDang", to: "carts#historyCartDang"
   resources :carts do
+     
     member do
       post "update"
       post "delete"
       post "addProduct"
       get "getCart"
+      get "historyCartDang"
       # post "accept"
       # post "decline"
     end

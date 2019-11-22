@@ -68,6 +68,11 @@ class CartsController < ApplicationController
     @items.map{|i| params.push({:id=>i.id,:quantity=>i.quantity,:name=>Product.find_by(id: i.product_id).name,:image=>Product.find_by(id: i.product_id).image,:price=>Product.find_by(id: i.product_id).price})}
     render json: params
   end
+  def historyCartDang
+    @user = User.find_by(authentication_token: params[:id])
+    @cartD = Cart.where(user_id: @user.id)
+    render json: @cartD
+  end
   private
     def set_cart
       user = find_user(params[:id])
