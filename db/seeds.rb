@@ -47,7 +47,6 @@ end
     Product.create!(name: name, description: description, quantity: quantity, price: price, 
     image: image, category_id: category_id, classify:classify, rate: rate)
 end
-
 100.times do
   comment = Faker::TvShows::Friends.quote 
   rate = rand(0..5)

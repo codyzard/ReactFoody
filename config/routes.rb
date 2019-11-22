@@ -25,7 +25,9 @@ Rails.application.routes.draw do
     # delete '/sign_out', to: 'session#destroy'
   get '/carts' , to: "carts#show"
   post '/carts/confirm',to: "carts#confirm"
+  post '/carts/decline',to: "carts#decline"
   resources :carts do
+    post "sendcart"
     member do
       post "update"
       post "delete"
