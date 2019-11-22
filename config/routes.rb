@@ -7,9 +7,6 @@ Rails.application.routes.draw do
   }
   put '/users/update', to: 'users#update'
   get '/users/:authentication_token', to: 'users#show'
-  get '/users/mini/:id', to: 'users#mini'
-  get '/users', to: 'users#index'
-  delete '/users/:authentication_token', to: 'users#destroy'
   # resources :users
   resources :products;
   resources :categories;

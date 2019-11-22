@@ -14,7 +14,7 @@ class Product < ApplicationRecord
         if @dem===0 
           @tb= 0
         else
-        @tb = @tb/@dem
+        @tb = (@tb/@dem).round()
         end
         return @tb
     end
