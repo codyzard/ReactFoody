@@ -2,7 +2,9 @@ class CartsController < ApplicationController
   before_action :set_cart, only: [:getCart,:addProduct]
   before_action :history_cart, only: [:index]
   before_action :find_cart, only:[:destroy]
-  def index 
+  def sendcart
+    cart =Cart.find_by(params[:id])
+    cart.update_attributes(status: 0)
   end
   def show
     @carts = Cart.where.not(status: 3)
