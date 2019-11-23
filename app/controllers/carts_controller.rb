@@ -24,19 +24,19 @@ class CartsController < ApplicationController
     end
     @carts = Cart.where.not(status: 3)
     para = []
-    @carts.map{|i| para.push(:id => i.id,:username => User.find_by(id:i.user_id).name,:status=>i.status,:item => i.items)}
+    @carts.map{|i|  para.push(:id => i.id,:username => User.find_by(id:i.user_id).name,:status=>i.status,:item => i.items)}
     render json: para
   end
 
   def confirm
     cart = Cart.find_by(id:params[:cart_id])
     if cart.status == 0
-      cart.items.map{|i| minus(i)}
+      Item.where(cart_id:cart.id).map{|i| minus(i)}
       cart.update_attributes(status: 1)
     end
     @carts = Cart.where.not(status: 3)
     para = []
-    @carts.map{|i| para.push(:id => i.id,:username => User.find_by(id:i.user_id).name,:status=>i.status,:item => i.items)}
+    @carts.map{|i|  para.push(:id => i.id,:username => User.find_by(id:i.user_id).name,:status=>i.status,:item => i.items)}
     render json: para
   end
 
@@ -67,6 +67,7 @@ class CartsController < ApplicationController
     item = @items.find_by(id:params[:Item_id])
     if item != nil
       item.destroy
+      
     end
     para = []
     @items.map{|i| para.push(pushparam(i))}
@@ -74,7 +75,7 @@ class CartsController < ApplicationController
   end
 
   def addProduct
-    item = @cart.items.find_by(product_id:params[:product_id])
+    item = Item.where(cart_id: @cart.id).find_by(product_id:params[:product_id])
     if item == nil
         i = Item.create(cart_id:@cart.id,product_id:params[:product_id],quantity:params[:quantity])
     else
@@ -84,22 +85,41 @@ class CartsController < ApplicationController
   end
 
   def getCart
-    @items = @cart.items
+    @items = Item.where(cart_id: @cart.id)
     params = []
-    if @items != nil
+    if @items != nil 
       @items.map{|i| params.push(pushparam(i))}
     end
     render json: params
   end
-
+  def historyCartDang
+    user = find_user(params[:id])
+    @cart = Cart.where(user_id: user.id)
+    para = []
+    if @cart != nil
+      @cart.map{|i|  para.push(awesomeCart(i))}
+    end
+    render json: para
+  end
   private
-
+    def awesomeCart (i)
+      if i != nil
+        para = []
+        items = i.items.map{|o| para.push(pushparam(o))}
+        return {:id => i.id,:createTime => i.created_at,:username => User.find_by(id:i.user_id).name,:status=>i.status,:item => para}
+      else
+        return nil
+      end
+    end
     def set_cart
       user = find_user(params[:id])
+      if user.carts == nil
+        @cart = Cart.create(user_id: user.id,status: 3)
+      end
       if user.carts.find_by(status:3) != nil
         @cart = user.carts.find_by(status:3)
         return @cart
-      else 
+      else
         @cart = Cart.create(user_id: user.id,status: 3)
         return @cart
       end
@@ -123,8 +143,13 @@ class CartsController < ApplicationController
     end
 
     def pushparam (i)
-      p = Product.find_by(id: i.product_id)
-      return {:id=>i.id,:quantity=>i.quantity,:name=>p.name,:image=>p.image,:price=>p.price}
+      if i.product_id == nil 
+        i.destroy
+        return nil
+      else
+        p = Product.find_by(id: i.product_id)
+        return {:id=>i.id,:quantity=>i.quantity,:name=>p.name,:image=>p.image,:price=>p.price}
+      end
     end
 
     def find_user (authentication_token)

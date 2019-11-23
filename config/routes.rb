@@ -35,6 +35,7 @@ Rails.application.routes.draw do
       post "delete"
       post "addProduct"
       get "getCart"
+      get "historyCartDang"
       # post "accept"
       # post "decline"
     end
