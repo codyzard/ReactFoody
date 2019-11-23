@@ -59,6 +59,7 @@ class CartsController < ApplicationController
     item = @items.find_by(id:params[:Item_id])
     if item != nil
       item.destroy
+      
     end
     para = []
     @items.map{|i| para.push(pushparam(i))}
@@ -81,7 +82,25 @@ class CartsController < ApplicationController
     end
     render json: params
   end
+  def historyCartDang
+    user = find_user(params[:id])
+    @cart = Cart.where(user_id: user.id)
+    para = []
+    if @cart != nil
+      @cart.map{|i|  para.push(awesomeCart(i))}
+    end
+    render json: para
+  end
   private
+    def awesomeCart (i)
+      if i != nil
+        para = []
+        items = i.items.map{|o| para.push(pushparam(o))}
+        return {:id => i.id,:createTime => i.created_at,:username => User.find_by(id:i.user_id).name,:status=>i.status,:item => para}
+      else
+        return nil
+      end
+    end
     def set_cart
       user = find_user(params[:id])
       if user.carts == nil
