@@ -14,11 +14,10 @@ class ReviewsController < ApplicationController
   def create
     @review = @user.reviews.create(review_params)
     if @review.save
-      # render json: @review, status: :created, location: @review
-      render json:{:review=> @review,:user => @user}, status: :created, location: @review
       @product = Product.find(@review.product_id)
       avr_rate = @product.average_rate
       @product.update_attribute(:rate, avr_rate)
+      render json: {:review=>@review,:user => @user}, status: :created, location: @review
     else
       render json: @review.errors, status: :unprocessable_entity
     end
@@ -42,6 +41,8 @@ class ReviewsController < ApplicationController
     @review.destroy 
     avr_rate = @product.average_rate
     @product.update_attribute(:rate, avr_rate)
+    render json: @review
+    
   end
 
   private
