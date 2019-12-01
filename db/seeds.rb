@@ -146,7 +146,6 @@ price: 250000,
   category_id: 4, 
   classify:1, 
   rate: 0) 
-
 Product.create!(name: "Súp ghẹ", 
 description: "Ghẹ mua về rửa sạch, bỏ vào nồi luộc chín, bạn nhớ đậy nắp nồi, ghẹ sẽ ra nước nên không cần đổ nước", 
 quantity: 50, 
@@ -155,7 +154,6 @@ price: 40000,
   category_id: 5, 
   classify:1, 
   rate: 0) 
-
   Product.create!(name: "Súp bò viên", 
 description: "Nguyên liệu: cho 5 ­ 6 khẩu phần ăn ­ 500g xương lợn, có thể dùng xương ống, 1 củ cải trắng, 1 nhúm tôm khô, 1 củ cà rốt", 
 quantity: 20, 
@@ -164,7 +162,6 @@ price: 25000,
   category_id: 5, 
   classify:1, 
   rate: 0) 
-
   Product.create!(name: "Nigiri sushi", 
 description: "Nigiri sushi là loại sushi nắm gồm cơm trộn với giấm, phía trên được đắp bằng hải sản và có thể có thêm 1 ít gừng hoặc vài cọng hành xay nhỏ.", 
 quantity: 10, 
@@ -191,9 +188,6 @@ price: 70000,
     classify: 1,
     rate: 0
     )
-    
-    
-    
     Product.create!(
     name: "Hải sản thập cẩm ",
     description: "Nguyên liệu tươi sống", 
@@ -215,7 +209,6 @@ price: 70000,
       classify: 0,
       rate: 0
       )
-      
       Product.create!(
       name: "Bia Tiger Crystal",
       description: "Bia số 1 Việt Nam,", 
@@ -226,7 +219,6 @@ price: 70000,
       classify: 0,
       rate: 0
       )
-      
       Product.create!(
       name: "Trà sữa kem xoài ",
       description: "Gong Cha Best seller", 
@@ -237,7 +229,6 @@ price: 70000,
       classify: 0,
       rate: 0
       )
-      
       Product.create!(
       name: "Godden Bubble Milk Tea",
       description: "Koi thé Must Try", 
@@ -248,8 +239,6 @@ price: 70000,
       classify: 0 ,
       rate: 0
       )
-      
-      
       Product.create!(
       name: "Fozen fruit Smoothie ",
       description: "Nguyên liệu từ dâu rừng và trà xanh ", 
@@ -260,8 +249,6 @@ price: 70000,
       classify: 0,
       rate: 0
       )
-      
-      
       Product.create!(
       name: "Mango Pineapple Smoothie",
       description:"Xoài tươi thiên nhiên và mật ong", 
@@ -272,10 +259,8 @@ price: 70000,
       classify: 0,
       rate: 0
       )
-      
-      
       Product.create!(
-      name: "SUPREME EARL GREY TEA",
+      name: "Earl grey tea",
       description: "Trà xanh tốt cho sức khoẻ", 
       quantity: 10 ,
       price: 100000, 
@@ -284,9 +269,6 @@ price: 70000,
       classify: 0,
       rate: 0
       )
-      
-      
-      
       Product.create!(
       name: "Tea honey",
       description: "Trà mật ong tốt cho tim mạch", 
@@ -297,10 +279,6 @@ price: 70000,
       classify: 0,
       rate: 0
       )
-      
-      
-      
-      
       Product.create!(
       name: " Sweet Possion Cooktail",
       description: "This tropical cocktail is not only beautiful but delicious and refreshing", 
@@ -311,10 +289,6 @@ price: 70000,
       classify: 0,
       rate: 0
       )
-      
-      
-      
-      
       Product.create!(
       name: " Champagne Cooktail",
       description: "Rượu champagne thượng hạng ", 
@@ -325,9 +299,6 @@ price: 70000,
       classify: 0,
       rate: 0
       )
-      
-      
-      
       Product.create!(
       name: "Milk Coffee Chocolate",
       description: "Cà phê robusta hảo hạng", 
@@ -338,9 +309,6 @@ price: 70000,
       classify: 0,
       rate: 0
       )
-      
-      
-      
       Product.create!(
       name: "Legend Coffee",
       description: "Đẳng cấp doanh nhân ", 
@@ -351,11 +319,331 @@ price: 70000,
       classify: 0,
       rate: 0
       )
-100.times do
+      Product.create!(
+name: "Topping Beef Steakhous ",
+description: "lozi Miếng bò bự nha trên mặt có topping là mấy cái hạt và thảo mộc rang, siêu thơm.",
+quantity: 100  ,
+price: 100000 ,
+image: "https://tea-4.lozi.vn/v1/images/resized/topping-beef-1538360755-1-6234444-1548815673",
+category_id:   1,
+classify: 1,
+rate: 0
+)
+Product.create!(
+name: "Cá hồi sốt đậu nành + beef steak",
+description: "cá hồi ,  beef steak  tái ngon không thể cưỡng ",
+quantity: 100  ,
+price: 90000 ,
+image: "https://tea-1.lozi.vn/v1/images/resized/ca-hoi-sot-dau-nanh-beef-steak-1517719878-1-5629165-1517719878?w=1920&type=s",
+category_id:   1,
+classify: 1,
+rate: 0
+)
+Product.create!(
+name: "Beef steak red wine sauce",
+description: "Cách làm rất đơn giản!Chọn bò thăn, dày 10cm, lọc hết gân và mỡ.",
+quantity: 100  ,
+price: 120000 ,
+image: "https://tea-1.lozi.vn/v1/images/resized/beef-steak-red-wine-sauce-1516777616-1-5565721-1516777616?w=1440&type=s",
+category_id:   1,
+classify: 1,
+rate: 0
+)
+Product.create!(
+name: "Thịt heo nướng sốt trứng",
+description: "Không làm thất vọng người mua ,sốt hollaindaise siêu ngon",
+quantity: 100  ,
+price: 140000 ,
+image: "https://tea-2.lozi.vn/v1/images/resized/roasted-pork-belly-eggs-benedict-at-the-diner-v-1526269285-1-5940970-1526269285?w=1440&type=s ",
+category_id:   2,
+classify: 1,
+rate: 0
+)
+Product.create!(
+name: "Pork Floss Castella",
+description: "Món này sẵn sàng được ship đến nhà bạn ",
+quantity: 100  ,
+price: 149000 ,
+image: "https://tea-2.lozi.vn/v1/images/resized/pork-floss-castella-1515352619-1-5364083-1515352619?w=1920&type=o ",
+category_id:   2,
+classify: 1,
+rate: 0
+)
+Product.create!(
+name: "Grill pork chop",
+description: "hãy cứ tưởng đây là phiên bản cơm tấm sườn nhưng không có cơm và miếng sườn nó to hơn . ",
+quantity: 100  ,
+price: 350000 ,
+image: "https://tea-1.lozi.vn/v1/images/resized/grill-pork-chop-1500465704-2-3193257-1500465704?w=1440&type=s ",
+category_id:   2,
+classify: 1,
+rate: 0
+)
+Product.create!(
+name: "Chân Gà & Cánh Gà Nướng",
+description: " không thể cưỡng nổi",
+quantity: 100  ,
+price: 120000 ,
+image: "https://images.foody.vn/res/g3/29950/prof/s576x330/foody-mobile-gaf-jpg-625-635774031832188720.jpg ",
+category_id:   3,
+classify: 1,
+rate: 0
+)
+Product.create!(
+name: "Cơm Rang Gà Quay",
+description: "Hương vị mẹ nấu",
+quantity: 100  ,
+price: 112000 ,
+image: "https://images.foody.vn/res/g2/13882/s180x180/foody-com-rang-ga-quay-ba-trieu-153-636036312923249467.jpg ",
+category_id:   3,
+classify: 1,
+rate: 0
+)
+Product.create!(
+name: "King Dakgalbi - Gà Xào Phomai",
+description: "không ngon không lấy tiền",
+quantity: 100  ,
+price: 135000 ,
+image: "https://images.foody.vn/res/g22/218625/prof/s576x330/foody-mobile-21215153-jpg-872-636127324150928226.jpg ",
+category_id:   3,
+classify: 1,
+rate: 0
+)
+
+Product.create!(
+name: "Hotdog Bamy",
+description: "béo nhưng không ngấy",
+quantity: 100  ,
+price: 50000, 
+image: "https://images.foody.vn/res/g15/147810/prof/s576x330/foody-mobile-hd1-jpg-310-635917357862108564.jpg ",
+category_id:   4,
+classify: 1,
+rate: 0
+)
+Product.create!(
+name: "YouOne Hotdog",
+description: "hương vị quyen thuộc",
+quantity: 100  ,
+price: 20000 ,
+image: "https://images.foody.vn/res/g79/786675/prof/s576x330/foody-upload-api-foody-mobile-hot-m-jpg-181012161020.jpg  ",
+category_id:   4,
+classify: 1,
+rate: 0
+)
+Product.create!(
+name: "Phô Mai Xinh - HotDog",
+description: "ăn và cảm nhận hương vị béo ngậy từ phô mai",
+quantity: 100  ,
+price: 60000 ,
+image: "https://images.foody.vn/res/g94/935804/prof/s576x330/foody-upload-api-foody-mobile-hd-190703162910.jpg  ",
+category_id:   4,
+classify: 1,
+rate: 0
+)
+
+
+Product.create!(
+name: "Khoắng Nướng - Soup Cua Sài Gòn",
+description: " không chỉ là ngon",
+quantity: 100  ,
+price: 159000 ,
+image: "https://images.foody.vn/res/g92/917065/prof/s576x330/foody-upload-api-foody-mobile-sup-190515154202.jpg  ",
+category_id:   5,
+classify: 1,
+rate: 0
+)
+Product.create!(
+name: "Vietnamese Beef Noodle Soup",
+description: " hương vị việt nam",
+quantity: 100  ,
+price: 60000 ,
+image: "https://images.foody.vn/res/g64/638025/prof/s576x330/foody-mobile-12-jpg-123-636245617749825020.jpg   ",
+category_id:   5,
+classify: 1,
+rate: 0
+)
+Product.create!(
+name: "Cháo Dinh Dưỡng Việt Soup",
+description: " giúp bé ăn ngon",
+quantity: 100  ,
+price: 30000 ,
+image: "https://images.foody.vn/res/g97/964459/prof/s576x330/foody-upload-api-foody-mobile-z1549424653076_0de4a-191002204751.jpg  ",
+category_id:   5,
+classify: 1,
+rate: 0
+)
+
+
+Product.create!(
+name: "Sushi Garden",
+description: " hương vị nhật bản",
+quantity: 100  ,
+price: 150000,
+image: "https://images.foody.vn/res/g70/694024/s180x180/foody-sushi-garden-887-636514797514608926.jpg   ",
+category_id:   6,
+classify: 1,
+rate: 0
+)
+Product.create!(
+name: "Sushi Nhật Bản Aozora",
+description: " sushi quá tuyệt vời cho gia đình tôi mọi người ",
+quantity: 100  ,
+price: 319000 ,
+image: "https://images.foody.vn/res/g1/6616/s180x180/foody-aozora-247-636661817766184363.jpg  ",
+category_id:   6,
+classify: 1,
+rate: 0
+)
+Product.create!(
+name: "Sushi Việt - Tô Hiệu",
+description: " Quán sushi giá sinh viênchất lượng rất ổn, đáng thử và quay lại.",
+quantity: 100  ,
+price: 30000 ,
+image: "https://images.foody.vn/res/g25/246327/s180x180/foody-sushi-viet-938-636275745556789560.jpg   ",
+category_id:   6, 
+classify: 1,
+rate: 0
+)
+
+
+Product.create!(
+name: "Xuân Seafood - Hải Sản Các Loại",
+description: " hàng tương ngon, không tươi không lấy tiền",
+quantity: 100  ,
+price: 450000 ,
+image: "https://images.foody.vn/res/g80/791983/prof/s576x330/foody-upload-api-foody-mobile-xuan-jpg-181031113641.jpg  ",
+category_id:   7,
+classify: 1,
+rate: 0
+)
+Product.create!(
+name: "Sea Fire Salt",
+description: " Luôn luôn tươi ngon ",
+quantity: 100  ,
+price: 590000 ,
+image:"https://media-cdn.tripadvisor.com/media/photo-s/16/a0/b8/5b/signature-grilled-surf.jpg ",
+category_id:   7,
+classify: 1,
+rate: 0
+)
+Product.create!(
+name: "Nam Sang Seafood Restaurant ",
+description: " chọn ngay chế biến ngay ",
+quantity: 100  ,
+price: 1000000,
+image:"https://media-cdn.tripadvisor.com/media/photo-s/0a/3e/00/06/yummy-clams-sauteed-with.jpg  ",
+category_id:   7,
+classify: 1,
+rate: 0
+)
+Product.create!(
+name: "Vuvuzela Beer Club ",
+description: " Không gian sạch sẽ.phục vụ nhiệt tình",
+quantity: 100  ,
+price: 550000,
+image:"https://images.foody.vn/res/g5/42816/prof/s576x330/foody-mobile-hdt-jpg-719-635817355445350267.jpg ",
+category_id:   8,
+classify: 0,
+rate: 0
+)
+Product.create!(
+name: "Beer Club ",
+description: " không gian cho sự thư giãn ",
+quantity: 100  ,
+price: 500000,
+image:"https://images.foody.vn/res/g79/786477/prof/s576x330/foody-upload-api-foody-mobile-vuvuzela-jpg-181012111556.jpg ",
+category_id:   8,
+classify: 0,
+rate: 0
+)
+
+
+Product.create!(
+name: "Hachico Milk Tea",
+description: " trà sữa thơm ngon",
+quantity: 100  ,
+price: 35000,
+image:"https://images.foody.vn/res/g76/753023/prof/s576x330/foody-upload-api-foody-mobile-1-jpg-180622150444.jpg ",
+category_id:   9,
+classify: 0,
+rate: 0
+)
+Product.create!(
+name: "Loly Milk Tea & Coffee",
+description: " luôn làm khách hàng hài lòng",
+quantity: 100  ,
+price: 45000,
+image:"https://images.foody.vn/res/g74/733236/prof/s576x330/foody-upload-api-foody-mobile-2-jpg-180416102816.jpg ",
+category_id:   9,
+classify: 0,
+rate: 0
+)
+Product.create!(
+name: "Royal Milk Tea & Coffee",
+description: " giá cả hợp lý",
+quantity: 100  ,
+price: 60000,
+image:"https://images.foody.vn/res/g91/902402/prof/s576x330/foody-upload-api-foody-mobile-foody-upload-api-foo-190405135346.jpg ",
+category_id:   9,
+classify: 0,
+rate: 0
+)
+Product.create!(
+name: "Smoothies & Juices",
+description: " hoa quả tươi ngon",
+quantity: 100  ,
+price: 55000,
+image:"https://images.foody.vn/res/g3/28773/prof/s576x330/foody-upload-api-foody-mobile-smoothie-jpg-180822140836.jpg ",
+category_id:   10,
+classify: 0,
+rate: 0
+)
+Product.create!(
+name: "DN - Juices & Smoothies",
+description: " luôn luôn tươi ngon",
+quantity: 100  ,
+price: 40000,
+image:"https://images.foody.vn/res/g25/247033/prof/s576x330/foody-upload-api-foody-mobile-dn-fruits-190109133644.jpg ",
+category_id:   10,
+classify: 0,
+rate: 0
+)
+Product.create!(
+name: "Lylagua - Coffee, Smoothies & Juices",
+description: " không gian thư giãn",
+quantity: 100  ,
+price: 50000,
+image:"https://images.foody.vn/res/g68/678425/prof/s576x330/foody-mobile-719-jpg-509-636371786570479612.jpg",
+category_id:   10,
+classify: 0,
+rate: 0
+)
+Product.create!(
+name: "Toast 'n Tea Cafe & Food",
+description: "không gian thư giãn",
+quantity: 100  ,
+price: 50000,
+image:"https://images.foody.vn/res/g12/116070/prof/s576x330/foody-mobile-tt3-jpg-982-635739512286102577.jpg",
+category_id:   11,
+classify: 0,
+rate: 0
+)
+Product.create!(
+name: "Jouri Dessert & Tea",
+description: " xích lại gần nhau thêm",
+quantity: 100  ,
+price: 60000,
+image:"https://images.foody.vn/res/g22/215256/prof/s576x330/foody-upload-api-foody-mobile-7-jpg-181009102742.jpg",
+category_id:   11,
+classify: 0,
+
+rate: 0
+)
+200.times do
   comment = Faker::TvShows::Friends.quote 
   rate = rand(0..5)
   user_id = User.all[rand(0..49)].id
-  product_id =  Product.all[rand(0..28)].id
+  product_id =  Product.all[rand(0..59)].id
   Review.create!(comment: comment, rate: rate, user_id: user_id, product_id: product_id)
 end
 
