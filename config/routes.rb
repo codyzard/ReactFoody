@@ -47,6 +47,8 @@ Rails.application.routes.draw do
     get "commentedUsers"
     end
  end
+ get 'products/search/:key', to: "products#search"
+ get 'products/best/rate', to: "products#bestRate"
   # namespace :api do
   #   namespace :v1 do
   #     resources :products  

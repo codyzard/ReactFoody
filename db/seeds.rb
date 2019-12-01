@@ -351,12 +351,6 @@ price: 70000,
       classify: 0,
       rate: 0
       )
-
-
-
-
-
-
 100.times do
   comment = Faker::TvShows::Friends.quote 
   rate = rand(0..5)
