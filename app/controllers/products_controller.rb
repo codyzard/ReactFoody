@@ -21,7 +21,7 @@ class ProductsController < ApplicationController
   end
   def bestRate
     allproducts = Product.order(rate: :desc)
-    @products = allproducts[0,5]
+    @products = allproducts[0,10]
     render json: @products
   end
   def reviews

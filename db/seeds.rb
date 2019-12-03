@@ -310,16 +310,16 @@ price: 70000,
       rate: 0
       )
       Product.create!(
-      name: "Legend Coffee",
-      description: "Đẳng cấp doanh nhân ", 
-      quantity:  9,
-      price: 10000000, 
-      image: "https://media.metrip.vn/res/g5/42053/prof/s828x600/foody-mobile-dfkjdrfjdjdjdhjd-jpg-697-636383004240742318.jpg",
+      name: "Latte Macchiato",
+      description: "Latte Macchiato (Latte) là một loại cafe nóng gồm cafe Espresso và sữa. Về cơ bản, Latte giống như cafe sữa nhưng ngọt hơn. ", 
+      quantity:  10,
+      price: 30000, 
+      image: "https://www.hoteljob.vn/files/Anh-HTJ-Hong/phan-biet-8-loai-thuc-uong-ca-phe-hot-nhat-hien-nay-3.jpg",
       category_id: 13  ,
       classify: 0,
       rate: 0
       )
-      Product.create!(
+Product.create!(
 name: "Topping Beef Steakhous ",
 description: "lozi Miếng bò bự nha trên mặt có topping là mấy cái hạt và thảo mộc rang, siêu thơm.",
 quantity: 100  ,
@@ -330,7 +330,7 @@ classify: 1,
 rate: 0
 )
 Product.create!(
-name: "Cá hồi sốt đậu nành + beef steak",
+name: "Beef steak",
 description: "cá hồi ,  beef steak  tái ngon không thể cưỡng ",
 quantity: 100  ,
 price: 90000 ,
@@ -411,31 +411,31 @@ rate: 0
 )
 
 Product.create!(
-name: "Hotdog Bamy",
-description: "béo nhưng không ngấy",
+name: "Lẩu cá khoai",
+description: "Lẩu cá khoai (cá cháo) thơm ngon từ thịt cá, mềm ngọt của nước lẩu kết hợp với rau củ vô cùng hấp dẫn",
 quantity: 100  ,
 price: 50000, 
-image: "https://images.foody.vn/res/g15/147810/prof/s576x330/foody-mobile-hd1-jpg-310-635917357862108564.jpg ",
+image: "https://lh5.googleusercontent.com/rynJQ2tjU8voHxJZ6dMny2B-UZLNth4ZYviStx4DYnPEyvrYQp1kAMXEg9LfgwzRgx8V9Wv73aFUsMmxKPLgjm-vC7Ixxedn-q70D6-s-S5oWKkk904Z5vS9gOi5WI7VR3X8Goa2",
 category_id:   4,
 classify: 1,
 rate: 0
 )
 Product.create!(
-name: "YouOne Hotdog",
-description: "hương vị quyen thuộc",
+name: "Lẩu riêu cua gà ta",
+description: "Món lẩu này tuy cách chế biến hơi mất một chút thời gian nhưng ăn rất ngon và đáng để bạn bỏ thời gian và công sức.",
 quantity: 100  ,
 price: 20000 ,
-image: "https://images.foody.vn/res/g79/786675/prof/s576x330/foody-upload-api-foody-mobile-hot-m-jpg-181012161020.jpg  ",
+image: "https://lh5.googleusercontent.com/-z93WXDeTF7ldw78_l5Kyb_ZwTXr5pzpl085nAVxf7dVGce_WHlpwdfl_8Q1sMr6ISswr_J544gRBtwwJhop41aF_5yMsrZ2H_wc3hJR7tQhm9PKe-AXhriSv7zSqWz-W1Cl3wnb",
 category_id:   4,
 classify: 1,
 rate: 0
 )
 Product.create!(
-name: "Phô Mai Xinh - HotDog",
-description: "ăn và cảm nhận hương vị béo ngậy từ phô mai",
+name: "Lẩu ếch nấu măng",
+description: "Lẩu ếch nấu măng, nước lẩu chua cay mặn ngọt rất là vừa miệng, thịt ếch xào săn rất đậm đà với từng miếng măng vàng giòn. ",
 quantity: 100  ,
 price: 60000 ,
-image: "https://images.foody.vn/res/g94/935804/prof/s576x330/foody-upload-api-foody-mobile-hd-190703162910.jpg  ",
+image: "https://lh3.googleusercontent.com/L0fw9WGvjWK6Y4_ERrKuV_qkX8XDgcm55SLPLCEv77_mJumc3aqUUTE8KmruUdtQxJJT5l5XrmyznyrpKzb4JnzuPjebRJU3wshj2XglYcKtalGlH9vvj6CYtUFkkXOA_qJW4wp9",
 category_id:   4,
 classify: 1,
 rate: 0
@@ -443,31 +443,31 @@ rate: 0
 
 
 Product.create!(
-name: "Khoắng Nướng - Soup Cua Sài Gòn",
-description: " không chỉ là ngon",
+name: "Súp ghẹ và nấm đông cô",
+description: "Phi thơm hành và xào phần thịt ghẹ. Cho thịt ghẹ này vào nồi nước dùng cùng với cà rốt và nấu nhỏ lửa.",
 quantity: 100  ,
 price: 159000 ,
-image: "https://images.foody.vn/res/g92/917065/prof/s576x330/foody-upload-api-foody-mobile-sup-190515154202.jpg  ",
+image: "https://yeutre.vn/cdn/medias/uploads/22/22380-sup-4.jpg",
 category_id:   5,
 classify: 1,
 rate: 0
 )
 Product.create!(
-name: "Vietnamese Beef Noodle Soup",
-description: " hương vị việt nam",
+name: "Súp cua biển và nấm tuyết",
+description: "Khi dùng bạn trang trí với ít tiêu và hành ngò. Súp dùng nóng bao giờ cũng ngon hơn",
 quantity: 100  ,
 price: 60000 ,
-image: "https://images.foody.vn/res/g64/638025/prof/s576x330/foody-mobile-12-jpg-123-636245617749825020.jpg   ",
+image: "https://yeutre.vn/cdn/medias/uploads/22/22383-sup-3.jpg",
 category_id:   5,
 classify: 1,
 rate: 0
 )
 Product.create!(
-name: "Cháo Dinh Dưỡng Việt Soup",
-description: " giúp bé ăn ngon",
+name: "Súp măng cua",
+description: "Lấy măng tây ra khỏi hộp, bỏ nước và cắt măng chéo thành từng khúc vừa ăn cho thật đều sau đó chần lại qua nước sôi",
 quantity: 100  ,
 price: 30000 ,
-image: "https://images.foody.vn/res/g97/964459/prof/s576x330/foody-upload-api-foody-mobile-z1549424653076_0de4a-191002204751.jpg  ",
+image: "https://yeutre.vn/cdn/medias/uploads/22/22381-sup-1.jpg",
 category_id:   5,
 classify: 1,
 rate: 0
@@ -475,31 +475,31 @@ rate: 0
 
 
 Product.create!(
-name: "Sushi Garden",
-description: " hương vị nhật bản",
+name: "Hosomaki sushi",
+description: "“Maki” trong tiếng Nhật có nghĩa “cuộn” nên maki sushi chính là loại sushi cuộn – lớp cơm được đặt trên 1 tấm rong biển nori",
 quantity: 100  ,
 price: 150000,
-image: "https://images.foody.vn/res/g70/694024/s180x180/foody-sushi-garden-887-636514797514608926.jpg   ",
+image: "https://media.foody.vn/images/6f6a457c0c0f78e0.png",
 category_id:   6,
 classify: 1,
 rate: 0
 )
 Product.create!(
-name: "Sushi Nhật Bản Aozora",
-description: " sushi quá tuyệt vời cho gia đình tôi mọi người ",
+name: "Uramaki sushi ",
+description: "Uramaki sushi - khác biệt với các loại maki khác chút vì cơm sẽ được cuộn ở bên ngoài. Đây là loại maki rất quen thuộc ở các nước khác nhưng lại không phổ biến ở Nhật.",
 quantity: 100  ,
 price: 319000 ,
-image: "https://images.foody.vn/res/g1/6616/s180x180/foody-aozora-247-636661817766184363.jpg  ",
+image: "https://media.foody.vn/images/foody-sushi-hokkaido-sachi-dong-du-952-636091416103039759.jpg",
 category_id:   6,
 classify: 1,
 rate: 0
 )
 Product.create!(
-name: "Sushi Việt - Tô Hiệu",
-description: " Quán sushi giá sinh viênchất lượng rất ổn, đáng thử và quay lại.",
+name: "Temaki sushi",
+description: "Temaki sushi – nghĩa là “cuộn bằng tay” vì loại sushi này có thể làm từ lòng bàn tay. Temaki sushi có dạng hình phễu",
 quantity: 100  ,
 price: 30000 ,
-image: "https://images.foody.vn/res/g25/246327/s180x180/foody-sushi-viet-938-636275745556789560.jpg   ",
+image: "https://media.foody.vn/images/temaki-salmao.jpg",
 category_id:   6, 
 classify: 1,
 rate: 0
@@ -507,50 +507,50 @@ rate: 0
 
 
 Product.create!(
-name: "Xuân Seafood - Hải Sản Các Loại",
-description: " hàng tương ngon, không tươi không lấy tiền",
+name: "Cua Năm Căn Cà Mau",
+description: "Cua biển Năm Căn có vỏ cứng, thịt chắc, thơm lại thêm vị ngọt đậm đà",
 quantity: 100  ,
-price: 450000 ,
-image: "https://images.foody.vn/res/g80/791983/prof/s576x330/foody-upload-api-foody-mobile-xuan-jpg-181031113641.jpg  ",
+price: 45000 ,
+image: "https://anh.24h.com.vn/upload/2-2016/images/2016-05-03/1462237926-top-16-mon-an-hai-san-ngon-noi-tieng-khong-nen-bo-qua--2-.jpg",
 category_id:   7,
 classify: 1,
 rate: 0
 )
 Product.create!(
-name: "Sea Fire Salt",
-description: " Luôn luôn tươi ngon ",
+name: "Ghẹ luộc",
+description: "Thịt ghẹ cung cấp nhiều chất đạm, vị lại ngọt và thanh và hầu như không béo và trở thành món hải sản được yêu thích phổ biến.",
 quantity: 100  ,
-price: 590000 ,
-image:"https://media-cdn.tripadvisor.com/media/photo-s/16/a0/b8/5b/signature-grilled-surf.jpg ",
+price: 59000 ,
+image:"https://anh.24h.com.vn/upload/2-2016/images/2016-05-03/1462237926-top-16-mon-an-hai-san-ngon-noi-tieng-khong-nen-bo-qua--3-.jpg",
 category_id:   7,
 classify: 1,
 rate: 0
 )
 Product.create!(
-name: "Nam Sang Seafood Restaurant ",
-description: " chọn ngay chế biến ngay ",
+name: "Mực nháy Cửa Lò",
+description: "Mực Nháy Cửa Lò hấp là món nhanh, ngon và hấp dẫn. Món mực nhảy hấp làm đơn giản, cần rửa sạch mực, lấy túi để nguyên con",
 quantity: 100  ,
-price: 1000000,
-image:"https://media-cdn.tripadvisor.com/media/photo-s/0a/3e/00/06/yummy-clams-sauteed-with.jpg  ",
+price: 100000,
+image:"http://tuhaoviet.vn/upload_images/images/minhtam/09_05_2016_%20Mua%20nhay%20cua%20lo%202.jpg",
 category_id:   7,
 classify: 1,
 rate: 0
 )
 Product.create!(
-name: "Vuvuzela Beer Club ",
-description: " Không gian sạch sẽ.phục vụ nhiệt tình",
+name: "Bia Séc Budweiser Budvar",
+description: "Mỗi loại bia ngoại thường sẽ tiến vào một phân khúc thị trường riêng biệt. Như Bia Bỉ thường định vị cho phân khúc cao cấp. ",
 quantity: 100  ,
-price: 550000,
-image:"https://images.foody.vn/res/g5/42816/prof/s576x330/foody-mobile-hdt-jpg-719-635817355445350267.jpg ",
+price: 43000,
+image:"https://st2.depositphotos.com/1063437/7654/i/950/depositphotos_76549587-stock-photo-bottles-of-budweiser-budvar-beer.jpg",
 category_id:   8,
 classify: 0,
 rate: 0
 )
 Product.create!(
-name: "Beer Club ",
-description: " không gian cho sự thư giãn ",
+name: "Bia Staropramen của Tiệp Khắc",
+description: "Bia staropramen là một đặc sản, là niềm tự vào và là Vàng trắng của thủ đô Praha hoa lệ. ",
 quantity: 100  ,
-price: 500000,
+price: 47000,
 image:"https://images.foody.vn/res/g79/786477/prof/s576x330/foody-upload-api-foody-mobile-vuvuzela-jpg-181012111556.jpg ",
 category_id:   8,
 classify: 0,
@@ -569,81 +569,517 @@ classify: 0,
 rate: 0
 )
 Product.create!(
-name: "Loly Milk Tea & Coffee",
-description: " luôn làm khách hàng hài lòng",
+name: "Trà sữa trân châu đường đen",
+description: "Trà sữa trân châu đường đen là loại thức uống “lên ngôi” vào hè 2018 với giới trẻ cả 2 miền Bắc, Nam.",
 quantity: 100  ,
 price: 45000,
-image:"https://images.foody.vn/res/g74/733236/prof/s576x330/foody-upload-api-foody-mobile-2-jpg-180416102816.jpg ",
+image:"http://junenoodlehouse.com/wp-content/uploads/2018/09/sua-tuoi-tran-chau-duong-den-da-co-mat-tai-june-4.jpg",
 category_id:   9,
 classify: 0,
 rate: 0
 )
 Product.create!(
-name: "Royal Milk Tea & Coffee",
+name: "Trà xoài kem cheese",
 description: " giá cả hợp lý",
 quantity: 100  ,
 price: 60000,
-image:"https://images.foody.vn/res/g91/902402/prof/s576x330/foody-upload-api-foody-mobile-foody-upload-api-foo-190405135346.jpg ",
+image:"https://cdn.huongnghiepaau.com/wp-content/uploads/2018/07/8d49e1f42a25f39552b52fa6de90477e.jpg",
 category_id:   9,
 classify: 0,
 rate: 0
 )
 Product.create!(
-name: "Smoothies & Juices",
-description: " hoa quả tươi ngon",
-quantity: 100  ,
+name: "Smoothie chuối kèm dâu tây",
+description: "Nếu đang lăn tăn bởi những nốt mụn đáng ghét thì hãy bổ sung một ly smoothie chuối kèm dâu tây mỗi ngày thì chắc hẳn bạn sẽ có một làn da mịn màng mơ ước đấy.",
+quantity: 20  ,
 price: 55000,
-image:"https://images.foody.vn/res/g3/28773/prof/s576x330/foody-upload-api-foody-mobile-smoothie-jpg-180822140836.jpg ",
+image:"https://toinayangi.vn/wp-content/uploads/2015/12/Cach-lam-4-loai-smoothie-thom-ngon-bo-duong-2-638x423.jpg",
 category_id:   10,
 classify: 0,
 rate: 0
 )
 Product.create!(
-name: "DN - Juices & Smoothies",
-description: " luôn luôn tươi ngon",
-quantity: 100  ,
+name: "Smoothie ngũ cốc",
+description: "Ngũ cốc rất phổ biến cho bữa ăn sáng, nhất là ở các nước phương Tây, một bát ngũ cốc cho bữa sáng là cũng rất đủ dinh dưỡng ",
+quantity: 20  ,
 price: 40000,
-image:"https://images.foody.vn/res/g25/247033/prof/s576x330/foody-upload-api-foody-mobile-dn-fruits-190109133644.jpg ",
+image:"https://blog.beemart.vn/wp-content/uploads/2019/08/Smoothie-Bowls-1-1024x619.jpg",
 category_id:   10,
 classify: 0,
 rate: 0
 )
 Product.create!(
-name: "Lylagua - Coffee, Smoothies & Juices",
-description: " không gian thư giãn",
+name: "Smoothie việt quất",
+description: "Lại một loại hoa quả nước được sử dụng để làm nên một ly smoothie tuyệt vời, với vị ngọt của việt quất cùng chút ngậy ngậy của sữa",
 quantity: 100  ,
 price: 50000,
-image:"https://images.foody.vn/res/g68/678425/prof/s576x330/foody-mobile-719-jpg-509-636371786570479612.jpg",
+image:"https://toinayangi.vn/wp-content/uploads/2015/12/Cach-lam-4-loai-smoothie-thom-ngon-bo-duong-4-638x461.png",
 category_id:   10,
 classify: 0,
 rate: 0
 )
 Product.create!(
-name: "Toast 'n Tea Cafe & Food",
-description: "không gian thư giãn",
+name: "Trà Ô Long",
+description: "Trà Ô Long được gọi chung nhóm “thanh trà” là một nhóm lớn những loại trà được lên men khoảng từ 20% đến 80%",
 quantity: 100  ,
 price: 50000,
-image:"https://images.foody.vn/res/g12/116070/prof/s576x330/foody-mobile-tt3-jpg-982-635739512286102577.jpg",
+image:"https://afamilycdn.com/2018/8/17/cong-dung-cua-tra-o-long4-15344988909851747898431-1-0-423-675-crop-15344989556391840772442.jpg",
 category_id:   11,
 classify: 0,
 rate: 0
 )
 Product.create!(
-name: "Jouri Dessert & Tea",
-description: " xích lại gần nhau thêm",
+name: "Hồng trà",
+description: "Trà đen (Hồng Trà) còn được gọi là trà đỏ “red tea”. Lá trà được oxy hóa hoàn toàn nên trà thành phẩm có màu đen, thơm nồng, nước trà pha ra có màu đỏ nâu",
 quantity: 100  ,
 price: 60000,
-image:"https://images.foody.vn/res/g22/215256/prof/s576x330/foody-upload-api-foody-mobile-7-jpg-181009102742.jpg",
+image:"https://dotea.vn/data/upload/Tin%20tuc/hong-tra.jpg",
 category_id:   11,
 classify: 0,
-
 rate: 0
 )
-200.times do
+Product.create!(
+name: "Bò hầm cà chua",
+description: "Nguyên liệu: Thịt bò, cà chua ba quả, hoa hồi, hạt tiêu, gừng, tỏi, đường, cần tây, hành xanh.",
+quantity: 20,
+price: 74000,
+image: "http://2sao.vietnamnetjsc.vn/images/2017/12/06/15/59/bo-ham-ca-chua.jpg",
+category_id: 1,
+classify: 1,
+rate: 0
+)
+
+Product.create!(
+name: "Bò xào nấm kim châm",
+description: "Nấm rất mau chín, phải làm nhanh, nấm chín quá sẽ bị nhũn, ăn mất ngon và mất nhiều vitamin. ",
+quantity: 500,
+price: 9240000,
+image: "http://2sao.vietnamnetjsc.vn/images/2017/12/06/15/59/bo-xao-nam-kim-cham.jpg",
+category_id: 1,
+classify: 1,
+rate: 0
+)
+
+Product.create!(
+name: "Thịt bò nấu dưa",
+description: "Phi hành thơm với mỡ hoặc dầu rồi cho cà chua vào đảo qua, tiếp đến cho cải chua. Nêm chút gia vị rồi đậy nắp lại đun khoảng 20 phút,",
+quantity: 600,
+price: 75000,
+image: "http://2sao.vietnamnetjsc.vn/images/2017/12/06/16/00/bo-nau-dua-chua.jpg",
+category_id: 1,
+classify: 1,
+rate: 0
+)
+
+Product.create!(
+name: "Thịt heo chiên xóc tỏi ",
+description: "Không chỉ là món ăn ngon dành cho bữa cơm gia đình, thịt heo chiên xóc tỏi còn biến tấu để trở thành món mồi nhắm cực kỳ tuyệt vời",
+quantity: 70,
+price: 160000,
+image: "https://file.organica.vn/uploads/filecloud/2018/August/31/1317-895901535701440-1535701440.jpg",
+category_id: 2,
+classify: 1,
+rate: 0
+)
+
+Product.create!(
+name: "Thịt heo hầm cà rốt",
+description: "Vị ngọt thanh của cà rốt kết hợp với những miếng thịt lợn đậm đà sẽ là món ăn vô cùng hấp dẫn cho bữa cơm gia đình của bạn.",
+quantity: 45,
+price: 85000,
+image: "https://file.organica.vn/uploads/filecloud/2018/August/31/1333-929801535701908-1535701908.jpg",
+category_id: 2, 
+classify: 1,
+rate: 0
+)
+
+Product.create!(
+name: "Thịt heo bọc sả chiên giòn",
+description: "Vỏ thịt giòn giòn, khi cắn vào vừa mềm vừa thơm, thịt heo bọc sả chiên giòn đích thị là món ăn khiến bạn nhớ mãi",
+quantity: 78,
+price: 63000,
+image: "https://file.organica.vn/uploads/filecloud/2018/August/31/1318-554171535701440-1535701440.jpg",
+category_id: 2,
+classify: 1,
+rate: 0
+)
+
+Product.create!(
+name: "Thịt gà Bresse",
+description: "Đặc sản của Bresse, Pháp. Thịt gà ngon, tuyệt hảo, thuộc đẳng cấp thế giới",
+quantity: 150,
+price: 110000,
+image: "https://kenh14cdn.com/thumb_w/620/2017/1-1511983877177.jpg",
+category_id: 3,
+classify: 1,
+rate: 0
+)
+
+Product.create!(
+name: "Thịt gà Đông Tảo Việt Nam",
+description: "Giống gà nổi tiếng từ thời xa xưa ở Việt Nam, thường được tiếng cống cho vua chúa. Chắc thịt, ngon dai, da săn giòn, ít hàm lượng mỡ.",
+quantity: 300,
+price: 1500000,
+image: "http://huongsen.vn/wp-content/uploads/2017/04/ga-dong-tao-ham-thuoc-bac-3.jpg",
+category_id: 3,
+classify: 1,
+rate: 0
+)
+
+Product.create!(
+name: "Thịt gà Nagoya Cochin",
+description: "Thịt gà xuất xứ từ Nhật Bản. Thịt ngon, đậm đà, chứa nhiều collagen tốt cho da và nhiều chất bổ dưỡng khác rất tốt cho sức khẻ.",
+quantity: 600,
+price: 1050000,
+image: "https://www.3030.co.jp/upload/save_image/img_000000000061_1.jpg",
+category_id: 3,
+classify: 1,
+rate: 0
+)
+
+Product.create!(
+name: "Lẩu Tứ Xuyên",
+description: "Được chế biến với 89 nguyên liệu khác nhau, người ăn cảm thấy cay nhưng không gây ảnh hưởng đến sức khỏe dạ dày",
+quantity: 20,
+price: 300000,
+image: "http://imgs.vietnamnet.vn/Images/2015/09/09/10/20150909104105-1-2.jpg",
+category_id: 4,
+classify: 1,
+rate: 0
+)
+
+Product.create!(
+name: "Lẩu Tôm chua cay",
+description: "Lẩu Tôm chua cay là món ăn khá dễ làm nhưng đòi hỏi thời gian chế biến. Nước dùng đậm đà, có vị chua chua, cay cay, tôm ngọt nước. ",
+quantity: 40,
+price: 200000,
+image: "https://lh6.googleusercontent.com/b8Iq2VGhBxOf9_CdhSTfArqIBXPRvrs3ZfY8SpkBRjNyiPLWbMvvMRpsJQmjrxWmjTEgANDeBh5yN-evvg8oBi7fiE0sjQRkC_d6MIfMeWtmsvt1GS6ZZL6rxnmUKFEKB2T94CfL",
+category_id: 4,
+classify: 1,
+rate: 0
+)
+
+Product.create!(
+name: "Lẩu Udon Suki",
+description: "Món lẩu của Nhật Bản. Sợi mì dai, mịn kết hợp nước lẩu đậm đà, thanh ngọt mang lại hương vị tuyệt vời.",
+quantity: 35,
+price: 200000,
+image: "https://st.phunuonline.com.vn/staticFile/Subject/2017/05/24/lau-mi-1_241429818.png",
+category_id: 4,
+classify: 1,
+rate: 0
+)
+
+Product.create!(
+name: "Phở Bò",
+description: "Ngon, dễ ăn, nóng hổi, rất thích hợp ăn vào buổi sáng.",
+quantity: 50,
+price: 20000,
+image: "https://sanvemaybay.vn/includes/uploads/2015/01/nhung-mon-sup-noi-tieng-tren-the-gioi-1-357x500.jpg",
+category_id: 5,
+classify: 1,
+rate: 0
+)
+
+Product.create!(
+name: "Súp mì bò Đài Loan",
+description: "Món ăn truyền thống Đài Loan.",
+quantity: 34,
+price: 35000,
+image: "https://sanvemaybay.vn/includes/uploads/2015/01/nhung-mon-sup-noi-tieng-tren-the-gioi-2.jpg",
+category_id: 5,
+classify: 1,
+rate: 0
+)
+
+Product.create!(
+name: "Súp Ajaco",
+description: "Món ăn nổi tiếng của Colombia, có hương vị phong phú.",
+quantity: 60,
+price: 40000,
+image: "https://sanvemaybay.vn/includes/uploads/2015/01/nhung-mon-sup-noi-tieng-tren-the-gioi-5-343x500.jpg",
+category_id: 5,
+classify: 1,
+rate: 0
+)
+
+Product.create!(
+name: "Sushi cuộn dưa chuột",
+description: "Món ăn đơn giản dễ làm, là món sushi hoàn hảo cho người ăn chay",
+quantity: 80,
+price: 40000,
+image: "https://znews-photo.zadn.vn/w1024/Uploaded/jaroin/2017_11_03/KappaMaki.jpg",
+category_id: 6,
+classify: 1,
+rate: 0
+)
+
+Product.create!(
+name: "Sushi cuộn Alaska",
+description: "Thành phần gồm cá hồi, cơm sushi, lá rong biển, bơ và thịt cua giả.",
+quantity: 60,
+price: 50000,
+image: "https://znews-photo.zadn.vn/w1024/Uploaded/jaroin/2017_11_03/alaskanroll640x428.jpg",
+category_id: 6,
+classify: 1,
+rate: 0
+)
+
+Product.create!(
+name: "Sushi cá hồi",
+description: "Là món ăn giàu protein và omega 3, nhiều vitamin D và ít chất béo. Thực phẩm tươi ngon.",
+quantity: 75,
+price: 65000,
+image: "https://media.foody.vn/images/Blog_Kasen.jpg",
+category_id: 6,
+classify: 1,
+rate: 0
+)
+
+Product.create!(
+name: "Cá hồi",
+description: "Thực phẩm tươi ngon, chứa nhiều vitamin D, omega 3 và giàu protein",
+quantity: 500,
+price: 350000,
+image: "https://cdn.tgdd.vn/Files/2017/10/26/1036136/phan-biet-ca-hoi-dong-lanh-va-ca-hoi-tuoi-h2_800x400.jpg",
+category_id: 7,
+classify: 1,
+rate: 0
+)
+
+Product.create!(
+name: "Cua Hoàng đế",
+description: "thịt ngon , chắc, gạch thơm béo và chứa nhiều chất dinh dưỡng.",
+quantity: 800,
+price: 2150000,
+image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIXGQJ8IFMfXIgcM7J2HKx8O0S8Cbzd6UA9hJNptX8uhkk_in7Bw&s",
+category_id: 7,
+classify: 1,
+rate: 0
+)
+Product.create!(
+name: "Vi cá mập",
+description: "Có chứa nhiều chất đạm, canxi, và collagen. Rất tốt cho xương và hệ tim mạch",
+quantity: 300, 
+price: 1300000,
+image: "https://upload.wikimedia.org/wikipedia/commons/3/39/Chinese_cuisine-Shark_fin_soup-01.jpg",
+category_id: 7,
+classify: 1,
+rate: 0
+)
+
+Product.create!(
+name: "Heineken",
+description: "một loại bia lager nhạt, có độ cồn 5%, được sản xuất tại Hà Lan",
+quantity: 2000,
+price: 21000,
+image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRu5ZlXZ41ajgNlcBUKP6Jjx7_Eq-KK7CnuIuFU81fa0V7RZu8&s",
+category_id: 8,
+classify: 0,
+rate: 0
+)
+
+Product.create!(
+name: "Tiger Beer",
+description: "Thương hiệu bia nổi tiếng của Singapore, được ưa chuộng bởi chất lượng cao mà giá thành thuộc loại tầm trung.",
+quantity: 3000,
+price: 15000,
+image: "https://toplist.vn/images/800px/tiger-beer-75735.jpg",
+category_id: 8,
+classify: 0,
+rate: 0
+)
+
+Product.create!(
+name: "Bia Hà Nội",
+description: "Bia rẻ nhưng chất lượng hảo hạng",
+quantity: 5000,
+price: 11000,
+image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTU7-RwdJBCzFw3l3hs96lRZY0KkQ3DPEmCNX3KUkcPO6Ntv3qC&s",
+category_id: 8,
+classify: 0,
+rate: 0
+)
+
+Product.create!(
+name: "Koi Milk Tea",
+description: "Loại trà sữa bắt nguồn từ Singapore, không quá ngọt, hơi thanh, đa dạng về hương vị.",
+quantity: 650,
+price: 50000,
+image: "https://www.foodpanda.vn/wp-content/uploads/2018/10/tra-sua-koi.jpg",
+category_id: 9,
+classify: 0,
+rate: 0
+)
+
+Product.create!(
+name: "Trà sữa trân châu trắng",
+description: " Trân châu trắng được làm từ bột rau câu dẻo, bột rau câu giòn, tạo hình thành các hạt tròn bé có màu trắng.",
+quantity: 30,
+price: 47000,
+image: "https://jarvis.vn/uploaded/tra-sua-tran-chau-trang(2).jpg",
+category_id: 9,
+classify: 0,
+rate: 0
+)
+
+Product.create!(
+name: "Trà sữa Oreo Cake Cream",
+description: "Hương vị tuyệt vời, có rất nhiều hương vị đa dạng, phong phú.",
+quantity: 30,
+price: 40000,
+image: "https://jarvis.vn/uploaded/tra-sua-oreo-cake-cream(1).jpg",
+category_id: 9,
+classify: 0,
+rate: 0
+)
+
+Product.create!(
+name: "Sinh tố Bơ",
+description: "Được làm từ trái bơ tươi, vừa chín tới, ngon, bổ dưỡng.",
+quantity: 300,
+price: 15000,
+image: "https://danangz.vn/wp-content/uploads/2019/08/recipe744-635526155347256406-768x480.jpg",
+category_id: 10,
+classify: 0,
+rate: 0
+)
+
+Product.create!(
+name: "Sinh tố xoài",
+description: "Vị chua ngọt, thơm ngon. Được lựa chọn cẩn thận về nguồn gốc cũng như chất lượng",
+quantity: 450,
+price: 10000,
+image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQicazLYQ5i-GTtSXSEIFPY1YKmLrKxdNa_FgH_kKR2ki7KQlSCJQ&s",
+category_id: 10,
+classify: 0,
+rate: 0
+)
+
+Product.create!(
+name: "Sinh tố thập cẩm",
+description: "Nhiều loại trái cây khác nhau tạo nên hương vị tuyệt vời",
+quantity: 360,
+price: 20000,
+image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRy2AtqvDegPBjLq2XemxCcCfXnDkBg9TzslVFot1l60kLZJEGi0w&s",
+category_id: 10,
+classify: 0,
+rate: 0
+)
+
+Product.create!(
+name: "Trà Darjeeling",
+description: "Trà đen cực nổi tiếng ở Ấn Độ bởi hương vị thơm ngon và đặc biệt",
+quantity: 400,
+price: 23000,
+image: "http://phache.com.vn/upload/image/taste-of-darjeeling-tea.jpg",
+category_id: 11,
+classify: 0,
+rate: 0
+)
+
+Product.create!(
+name: "Trà Quan Âm",
+description: "Đặc sản vùng Phúc Kiến, Trung Quốc. Hương vị đậm đà, dịu ngọt, có hương thơm tự nhiên",
+quantity: 368,
+price: 60000,
+image: "https://afamilycdn.com/k:thumb_w/600/WV8iA0A8EAfajQ9tIqEEPbrc36AeNK/Image/2015/02/thiet-quan-am-5632c/3-loai-tra-noi-tieng-ve-ca-do-ngon-lan-muc-gia-khung.jpg",
+category_id: 11,
+classify: 0,
+rate: 0
+)
+
+Product.create!(
+name: "Trà Thái Nguyên",
+description: "Trà nổi tiếng từ bao đời nay ở Việt Nam. Những búp trà được chế biến tỉ mỉ, hương vị thanh mát, dịu nhẹ và một chút đăng đắng tự nhiên.",
+quantity: 700,
+price: 12000,
+image: "http://phache.com.vn/upload/image/che-thai-nguyen.jpg",
+category_id: 11,
+classify: 0,
+rate: 0
+)
+
+Product.create!(
+name: "Bloody Mary",
+description: "cocktail cổ điển bao gồm vodka và nước ép cà chua là chủ yếu",
+quantity: 340,
+price: 45000,
+image: "https://number1.com.vn/wp-content/uploads/2017/06/cocktail-karlssons-bloody-mary.jpeg",
+category_id: 12,
+classify: 0,
+rate: 0
+)
+
+Product.create!(
+name: "Mojito",
+description: "Thành phần Rum nhẹ, bạc hà, và nước cốt chanh. Là thức uống hoàn hảo cho các kỳ nghỉ ở bãi biển",
+quantity: 280,
+price: 35000,
+image: "https://number1.com.vn/wp-content/uploads/2017/06/Cocktail-Mojito.png",
+category_id: 12,
+classify: 0,
+rate: 0
+)
+
+Product.create!(
+name: "Old Fashined", 
+description: "Là một trong các loại cocktail cổ điển nổi tiếng, Thành phần gồm Soda, bourbon và cam",
+quantity: 280,
+price: 60000,
+image: "https://number1.com.vn/wp-content/uploads/2017/06/Cocktail-Old-Fashioned.jpg",
+category_id: 12,
+classify: 0,
+rate: 0
+)
+
+Product.create!(
+name: "Café Sữa",
+description: "Ngon và béo ngậy, kết hợp thêm chút đá để có một ngày làm việc tỉnh táo",
+quantity: 350,
+price: 25000,
+image: "https://epicure.vn/wp-content/uploads/2017/08/cafe-sua-da-768x512.jpg",
+category_id: 13,
+classify: 0,
+rate: 0
+)
+
+Product.create!(
+name: "Café đen",
+description: "Không gì ngon hơn đậm đà và nguyên chất",
+quantity: 480,
+price: 20000,
+image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtX4-yf7Ws0pur0jROQv4S84R8Yta7HbZIkxcbIfrTNCW7Gm1I&s",
+category_id: 13,
+classify: 0,
+rate: 0
+)
+
+Product.create!(
+name: "Espresso",
+description: "Là loại cafe rất được ưa chuộng tại Ý và Tây Ban Nha; được pha bằng cách cho nước bị ép dưới áp suất cao chảy qua một lượng cafe được xay cực mịn.",
+quantity: 100,
+price: 30000,
+image: "https://www.hoteljob.vn/files/Anh-HTJ-Hong/phan-biet-8-loai-thuc-uong-ca-phe-hot-nhat-hien-nay-2.jpg",
+category_id: 13,
+classify: 0,
+rate: 0
+)
+Product.create!(
+name: "Smoothie kem dừa kiểu Thái",
+description: "Không quá đắng vị café mà chỉ là một chút hương thơm thoảng thoảng, kèm theo vị ngậy ngậy của dừa khô, sẽ đem đến cho bạn hương thơm thật mới lạ và cuốn hút đấy.",
+quantity: 100,
+price: 35000,
+image: "https://nguyenlieuphache.com/wp-content/uploads/2017/01/2-13.jpg",
+category_id: 10,
+classify: 0,
+rate: 0
+)
+250.times do
   comment = Faker::TvShows::Friends.quote 
   rate = rand(0..5)
   user_id = User.all[rand(0..49)].id
-  product_id =  Product.all[rand(0..59)].id
+  product_id =  Product.all[rand(0..99)].id
   Review.create!(comment: comment, rate: rate, user_id: user_id, product_id: product_id)
 end
 
