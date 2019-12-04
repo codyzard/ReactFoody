@@ -4,8 +4,8 @@ class CreateReviews < ActiveRecord::Migration[5.2]
       t.string :comment
       t.integer :rate
 
-      t.references :user, foreign_key:true
-      t.references :product, foreign_key:true
+      t.references :user, foreign_key: {on_delete: :cascade}
+      t.references :product, foreign_key: {on_delete: :cascade}
       t.timestamps
     end
   end

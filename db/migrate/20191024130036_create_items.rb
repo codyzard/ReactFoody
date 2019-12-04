@@ -4,8 +4,8 @@ class CreateItems < ActiveRecord::Migration[5.2]
 
       t.integer :quantity
       
-      t.references :product, foreign_key: true
-      t.references :cart, foreign_key: true
+      t.references :product, foreign_key: {on_delete: :cascade}
+      t.references :cart, foreign_key: {on_delete: :cascade}
       t.timestamps
     end
   end

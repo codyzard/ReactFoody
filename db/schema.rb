@@ -82,10 +82,10 @@ ActiveRecord::Schema.define(version: 2019_11_10_025012) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "carts", "users"
-  add_foreign_key "items", "carts"
-  add_foreign_key "items", "products"
-  add_foreign_key "products", "categories"
-  add_foreign_key "reviews", "products"
-  add_foreign_key "reviews", "users"
+  add_foreign_key "carts", "users", on_delete: :cascade
+  add_foreign_key "items", "carts", on_delete: :cascade
+  add_foreign_key "items", "products", on_delete: :cascade
+  add_foreign_key "products", "categories", on_delete: :cascade
+  add_foreign_key "reviews", "products", on_delete: :cascade
+  add_foreign_key "reviews", "users", on_delete: :cascade
 end

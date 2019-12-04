@@ -8,7 +8,7 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.boolean :classify #food or drink
       t.integer :quantity
       t.string :description
-      t.references :category, foreign_key: true
+      t.references :category, foreign_key: {on_delete: :cascade}
       t.timestamps
     end
   end
